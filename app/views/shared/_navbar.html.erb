@@ -1,0 +1,29 @@
+
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><%= link_to root_path, :class=> "navbar-brand" do %><i class="bi bi-hospital"></i><% end %></li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Cliente <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <%= link_to 'Nuevo Cliente ', new_client_path %> 
+    </ul>
+  </li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Mascotas <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <%= link_to 'Nueva Mascota ', new_pet_path %> 
+    </ul>
+  </li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Consultas <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <%= link_to 'Nueva Consulta ',  new_pet_history_path %> 
+    </ul>
+  </li>
+</ul>

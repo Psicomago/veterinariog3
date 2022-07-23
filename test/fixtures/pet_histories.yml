@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet: one
+  weight: 1.5
+  height: 1.5
+  diagnosis: MyString
+
+two:
+  pet: two
+  weight: 1.5
+  height: 1.5
+  diagnosis: MyString

@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+<div class="card container" style="width: 22rem;">
+  <ul class="list-group list-group-flush">
+    <p>
+      <li class="list-group-item">MASCOTA: <%= @pet.name %> </li>
+    </p>
+    
+    <p>
+      <strong>Client:</strong>
+      <%= @pet.client %>
+    </p>
+
+    <p>
+      <strong>Race:</strong>
+      <%= @pet.race %>
+    </p>
+
+    <p>
+      <strong>Bird:</strong>
+      <%= @pet.bird %>
+    </p>
+
+    <p class="text-center">
+      <%= link_to 'Edit', edit_pet_path(@pet) %> |
+      <%= link_to 'Back', pets_path %>
+    </p>
+  </ul>
+</div>
+<div>
+<h1>Pet Histories</h1>
+
+<table class= "table">
+  <thead>
+    <tr>
+      <th>Pet</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Diagnosis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if @pet_histories.nil? %>
+    <tr>
+        <td>La mascota</td>
+        <td><%= @pet.name %></td>
+        <td>no registra </td>
+        <td>Consultas</td>
+        <td><%= link_to 'Crear Consulta', new_pet_history_path %></td>
+      </tr>
+
+  <% else %>
+    <% @pet_histories.each do |pet_history| %>
+      <tr>
+        <td><%= pet_history.pet %></td>
+        <td><%= pet_history.weight %></td>
+        <td><%= pet_history.height %></td>
+        <td><%= pet_history.diagnosis %></td>
+        <td><%= link_to 'Show', pet_history %></td>
+        <td><%= link_to 'Edit', edit_pet_history_path(pet_history) %></td>
+        <td><%= link_to 'Destroy', pet_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+</div>
