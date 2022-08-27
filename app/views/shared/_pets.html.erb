@@ -8,19 +8,19 @@
       <th>Mascota</th>
       <th>Cliente</th>
       <th>Raza</th>
-      <th>Cumpleaños</th>
+      <th>Nacimiento</th>
       <th>Total visitas</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @pets.each do |pet| %>
+    <% @client.pets.each do |pet| %>
       <tr>
         <td><%= pet.name %></td>
         <td><%= pet.client %></td>
         <td><%= pet.race %></td>
-        <td><%= fecha(pet.bird) %></td>
+        <td><%= pet.bird %></td>
         <td><%= pet.pet_histories.count %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>

@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Historial de visitas</h1>
 
-<h1>Pet Histories</h1>
-
-<table>
+<table class= "table">
   <thead>
     <tr>
       <th>Pet</th>
@@ -14,6 +12,16 @@
   </thead>
 
   <tbody>
+  <% if @pet_histories.nil? %>
+    <tr>
+        <td>La mascota</td>
+        <td><%= @pet.name %></td>
+        <td>no registra </td>
+        <td>Consultas</td>
+        <td><%= link_to 'Crear Consulta', new_pet_history_path %></td>
+      </tr>
+
+  <% else %>
     <% @pet_histories.each do |pet_history| %>
       <tr>
         <td><%= pet_history.pet %></td>
@@ -25,9 +33,6 @@
         <td><%= link_to 'Destroy', pet_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Home', root_path %>

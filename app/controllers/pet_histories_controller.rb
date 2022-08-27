@@ -13,6 +13,7 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
+
   end
 
   # GET /pet_histories/1/edit

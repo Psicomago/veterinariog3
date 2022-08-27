@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
   # GET /pets or /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.all.order(:client_id).includes(:pet_histories)
   end
 
   # GET /pets/1 or /pets/1.json
@@ -12,10 +12,12 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
+    load_select
   end
 
   # GET /pets/1/edit
   def edit
+    load_select
   end
 
   # POST /pets or /pets.json
@@ -61,6 +63,12 @@ class PetsController < ApplicationController
     def set_pet
       @pet = Pet.find(params[:id])
     end
+
+    def load_select
+      @clients = Client.pluck(:name , :id)
+      # @events = Event.pluck(:name, :id)
+    end
+
 
     # Only allow a list of trusted parameters through.
     def pet_params

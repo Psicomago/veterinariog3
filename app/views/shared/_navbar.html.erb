@@ -8,6 +8,8 @@
     </a>
     <ul class="dropdown-menu">
       <%= link_to 'Nuevo Cliente ', new_client_path %> 
+      <br>
+      <%= link_to 'Ver Cientes ', clients_path %> 
     </ul>
   </li>
   <li role="presentation" class="dropdown">
@@ -16,6 +18,8 @@
     </a>
     <ul class="dropdown-menu">
       <%= link_to 'Nueva Mascota ', new_pet_path %> 
+      <br>
+      <%= link_to 'Ver Mascotas ', pets_path %>
     </ul>
   </li>
   <li role="presentation" class="dropdown">
@@ -23,7 +27,7 @@
       Consultas <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <%= link_to 'Nueva Consulta ',  new_pet_history_path %> 
+      <%= link_to 'Historial ',  pet_histories_path %> 
     </ul>
   </li>
 </ul>
